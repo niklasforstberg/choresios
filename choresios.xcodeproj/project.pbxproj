@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		354160052CED05FE000F1D56 /* choresiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354160042CED05FE000F1D56 /* choresiosApp.swift */; };
+		354160072CED05FE000F1D56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354160062CED05FE000F1D56 /* ContentView.swift */; };
+		354160092CED05FF000F1D56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354160082CED05FF000F1D56 /* Assets.xcassets */; };
+		3541600C2CED05FF000F1D56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3541600B2CED05FF000F1D56 /* Preview Assets.xcassets */; };
+		354160162CED0600000F1D56 /* choresiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354160152CED0600000F1D56 /* choresiosTests.swift */; };
+		354160202CED0600000F1D56 /* choresiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3541601F2CED0600000F1D56 /* choresiosUITests.swift */; };
+		354160222CED0600000F1D56 /* choresiosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354160212CED0600000F1D56 /* choresiosUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		354160122CED0600000F1D56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35415FF92CED05FE000F1D56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 354160002CED05FE000F1D56;
+			remoteInfo = choresios;
+		};
+		3541601C2CED0600000F1D56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35415FF92CED05FE000F1D56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 354160002CED05FE000F1D56;
+			remoteInfo = choresios;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		354160012CED05FE000F1D56 /* choresios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = choresios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		354160042CED05FE000F1D56 /* choresiosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choresiosApp.swift; sourceTree = "<group>"; };
+		354160062CED05FE000F1D56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		354160082CED05FF000F1D56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3541600B2CED05FF000F1D56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		354160112CED0600000F1D56 /* choresiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = choresiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		354160152CED0600000F1D56 /* choresiosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choresiosTests.swift; sourceTree = "<group>"; };
+		3541601B2CED0600000F1D56 /* choresiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = choresiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3541601F2CED0600000F1D56 /* choresiosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choresiosUITests.swift; sourceTree = "<group>"; };
+		354160212CED0600000F1D56 /* choresiosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choresiosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35415FFE2CED05FE000F1D56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3541600E2CED0600000F1D56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354160182CED0600000F1D56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35415FF82CED05FE000F1D56 = {
+			isa = PBXGroup;
+			children = (
+				354160032CED05FE000F1D56 /* choresios */,
+				354160142CED0600000F1D56 /* choresiosTests */,
+				3541601E2CED0600000F1D56 /* choresiosUITests */,
+				354160022CED05FE000F1D56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		354160022CED05FE000F1D56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				354160012CED05FE000F1D56 /* choresios.app */,
+				354160112CED0600000F1D56 /* choresiosTests.xctest */,
+				3541601B2CED0600000F1D56 /* choresiosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		354160032CED05FE000F1D56 /* choresios */ = {
+			isa = PBXGroup;
+			children = (
+				354160042CED05FE000F1D56 /* choresiosApp.swift */,
+				354160062CED05FE000F1D56 /* ContentView.swift */,
+				354160082CED05FF000F1D56 /* Assets.xcassets */,
+				3541600A2CED05FF000F1D56 /* Preview Content */,
+			);
+			path = choresios;
+			sourceTree = "<group>";
+		};
+		3541600A2CED05FF000F1D56 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3541600B2CED05FF000F1D56 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		354160142CED0600000F1D56 /* choresiosTests */ = {
+			isa = PBXGroup;
+			children = (
+				354160152CED0600000F1D56 /* choresiosTests.swift */,
+			);
+			path = choresiosTests;
+			sourceTree = "<group>";
+		};
+		3541601E2CED0600000F1D56 /* choresiosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3541601F2CED0600000F1D56 /* choresiosUITests.swift */,
+				354160212CED0600000F1D56 /* choresiosUITestsLaunchTests.swift */,
+			);
+			path = choresiosUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		354160002CED05FE000F1D56 /* choresios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 354160252CED0600000F1D56 /* Build configuration list for PBXNativeTarget "choresios" */;
+			buildPhases = (
+				35415FFD2CED05FE000F1D56 /* Sources */,
+				35415FFE2CED05FE000F1D56 /* Frameworks */,
+				35415FFF2CED05FE000F1D56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = choresios;
+			productName = choresios;
+			productReference = 354160012CED05FE000F1D56 /* choresios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		354160102CED0600000F1D56 /* choresiosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 354160282CED0600000F1D56 /* Build configuration list for PBXNativeTarget "choresiosTests" */;
+			buildPhases = (
+				3541600D2CED0600000F1D56 /* Sources */,
+				3541600E2CED0600000F1D56 /* Frameworks */,
+				3541600F2CED0600000F1D56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				354160132CED0600000F1D56 /* PBXTargetDependency */,
+			);
+			name = choresiosTests;
+			productName = choresiosTests;
+			productReference = 354160112CED0600000F1D56 /* choresiosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3541601A2CED0600000F1D56 /* choresiosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3541602B2CED0600000F1D56 /* Build configuration list for PBXNativeTarget "choresiosUITests" */;
+			buildPhases = (
+				354160172CED0600000F1D56 /* Sources */,
+				354160182CED0600000F1D56 /* Frameworks */,
+				354160192CED0600000F1D56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3541601D2CED0600000F1D56 /* PBXTargetDependency */,
+			);
+			name = choresiosUITests;
+			productName = choresiosUITests;
+			productReference = 3541601B2CED0600000F1D56 /* choresiosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35415FF92CED05FE000F1D56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					354160002CED05FE000F1D56 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					354160102CED0600000F1D56 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 354160002CED05FE000F1D56;
+					};
+					3541601A2CED0600000F1D56 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 354160002CED05FE000F1D56;
+					};
+				};
+			};
+			buildConfigurationList = 35415FFC2CED05FE000F1D56 /* Build configuration list for PBXProject "choresios" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 35415FF82CED05FE000F1D56;
+			productRefGroup = 354160022CED05FE000F1D56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				354160002CED05FE000F1D56 /* choresios */,
+				354160102CED0600000F1D56 /* choresiosTests */,
+				3541601A2CED0600000F1D56 /* choresiosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		35415FFF2CED05FE000F1D56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3541600C2CED05FF000F1D56 /* Preview Assets.xcassets in Resources */,
+				354160092CED05FF000F1D56 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3541600F2CED0600000F1D56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354160192CED0600000F1D56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35415FFD2CED05FE000F1D56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354160072CED05FE000F1D56 /* ContentView.swift in Sources */,
+				354160052CED05FE000F1D56 /* choresiosApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3541600D2CED0600000F1D56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354160162CED0600000F1D56 /* choresiosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354160172CED0600000F1D56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354160222CED0600000F1D56 /* choresiosUITestsLaunchTests.swift in Sources */,
+				354160202CED0600000F1D56 /* choresiosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		354160132CED0600000F1D56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 354160002CED05FE000F1D56 /* choresios */;
+			targetProxy = 354160122CED0600000F1D56 /* PBXContainerItemProxy */;
+		};
+		3541601D2CED0600000F1D56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 354160002CED05FE000F1D56 /* choresios */;
+			targetProxy = 3541601C2CED0600000F1D56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		354160232CED0600000F1D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		354160242CED0600000F1D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		354160262CED0600000F1D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"choresios/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forstberg.choresios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		354160272CED0600000F1D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"choresios/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forstberg.choresios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		354160292CED0600000F1D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forstberg.choresiosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/choresios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/choresios";
+			};
+			name = Debug;
+		};
+		3541602A2CED0600000F1D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forstberg.choresiosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/choresios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/choresios";
+			};
+			name = Release;
+		};
+		3541602C2CED0600000F1D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forstberg.choresiosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = choresios;
+			};
+			name = Debug;
+		};
+		3541602D2CED0600000F1D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forstberg.choresiosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = choresios;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35415FFC2CED05FE000F1D56 /* Build configuration list for PBXProject "choresios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				354160232CED0600000F1D56 /* Debug */,
+				354160242CED0600000F1D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		354160252CED0600000F1D56 /* Build configuration list for PBXNativeTarget "choresios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				354160262CED0600000F1D56 /* Debug */,
+				354160272CED0600000F1D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		354160282CED0600000F1D56 /* Build configuration list for PBXNativeTarget "choresiosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				354160292CED0600000F1D56 /* Debug */,
+				3541602A2CED0600000F1D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3541602B2CED0600000F1D56 /* Build configuration list for PBXNativeTarget "choresiosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3541602C2CED0600000F1D56 /* Debug */,
+				3541602D2CED0600000F1D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35415FF92CED05FE000F1D56 /* Project object */;
+}
