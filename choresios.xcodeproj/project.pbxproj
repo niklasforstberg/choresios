@@ -14,6 +14,10 @@
 		354160162CED0600000F1D56 /* choresiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354160152CED0600000F1D56 /* choresiosTests.swift */; };
 		354160202CED0600000F1D56 /* choresiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3541601F2CED0600000F1D56 /* choresiosUITests.swift */; };
 		354160222CED0600000F1D56 /* choresiosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354160212CED0600000F1D56 /* choresiosUITestsLaunchTests.swift */; };
+		359D1B612CED1FBD002C9B00 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D1B5D2CED1FBD002C9B00 /* NetworkManager.swift */; };
+		359D1B622CED1FBD002C9B00 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D1B5E2CED1FBD002C9B00 /* Models.swift */; };
+		359D1B632CED1FBD002C9B00 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D1B5F2CED1FBD002C9B00 /* KeychainManager.swift */; };
+		359D1B642CED1FBD002C9B00 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D1B602CED1FBD002C9B00 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,11 @@
 		3541601B2CED0600000F1D56 /* choresiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = choresiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3541601F2CED0600000F1D56 /* choresiosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choresiosUITests.swift; sourceTree = "<group>"; };
 		354160212CED0600000F1D56 /* choresiosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choresiosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		359D1B5D2CED1FBD002C9B00 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		359D1B5E2CED1FBD002C9B00 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		359D1B5F2CED1FBD002C9B00 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		359D1B602CED1FBD002C9B00 /* ContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		359D1B692CEE803D002C9B00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +103,11 @@
 		354160032CED05FE000F1D56 /* choresios */ = {
 			isa = PBXGroup;
 			children = (
+				359D1B692CEE803D002C9B00 /* Info.plist */,
+				359D1B602CED1FBD002C9B00 /* ContentViewModel.swift */,
+				359D1B5F2CED1FBD002C9B00 /* KeychainManager.swift */,
+				359D1B5E2CED1FBD002C9B00 /* Models.swift */,
+				359D1B5D2CED1FBD002C9B00 /* NetworkManager.swift */,
 				354160042CED05FE000F1D56 /* choresiosApp.swift */,
 				354160062CED05FE000F1D56 /* ContentView.swift */,
 				354160082CED05FF000F1D56 /* Assets.xcassets */,
@@ -257,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359D1B612CED1FBD002C9B00 /* NetworkManager.swift in Sources */,
 				354160072CED05FE000F1D56 /* ContentView.swift in Sources */,
+				359D1B642CED1FBD002C9B00 /* ContentViewModel.swift in Sources */,
 				354160052CED05FE000F1D56 /* choresiosApp.swift in Sources */,
+				359D1B622CED1FBD002C9B00 /* Models.swift in Sources */,
+				359D1B632CED1FBD002C9B00 /* KeychainManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +437,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"choresios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = choresios/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -447,6 +466,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"choresios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = choresios/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
