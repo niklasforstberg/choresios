@@ -1,0 +1,111 @@
+{
+  "common": {
+    "appName": "Chores",
+    "save": "Spara",
+    "serverUnavailable": "Servern svarar inte just nu. Försök igen om en stund.",
+    "retry": "Försök igen",
+    "cancel": "Avbryt"
+  },
+  "nav": {
+    "week": "Vecka",
+    "history": "Historik",
+    "household": "Hushåll"
+  },
+  "auth": {
+    "email": "E-post",
+    "password": "Lösenord",
+    "name": "Förnamn",
+    "login": "Logga in",
+    "register": "Skapa konto",
+    "noAccount": "Inget konto?",
+    "haveAccount": "Har du redan ett konto?",
+    "logout": "Logga ut",
+    "loginFailed": "Fel e-post eller lösenord."
+  },
+  "noHousehold": {
+    "title": "Välkommen",
+    "intro": "Skapa ett hushåll, eller gå med i ett med koden som någon i hushållet har.",
+    "createTitle": "Nytt hushåll",
+    "name": "Namn på hushållet",
+    "create": "Skapa",
+    "joinTitle": "Gå med",
+    "code": "Kod",
+    "join": "Gå med"
+  },
+  "week": {
+    "title": "Vecka {{number}}",
+    "previous": "Föregående vecka",
+    "next": "Nästa vecka",
+    "thisWeek": "Denna vecka",
+    "noChores": "Inga sysslor än. Lägg till dem under Hushåll.",
+    "planned": "planerad",
+    "done": "klar",
+    "add": "Planera",
+    "doneShort": "Klar",
+    "myWeek": "din vecka {{done}}/{{target}}",
+    "remove": "Ta bort",
+    "markDone": "Markera som klar",
+    "legend": "Tryck på + för att planera in dig, eller för att markera vem som har gjort sysslan idag eller tidigare. Tryck på en bokstav när det är gjort.",
+    "legendDay": "Planera tar sysslan den dagen, Klar bockar av den. Med pilen markerar du den som gjord av dig eller någon annan.",
+    "doneBy": "Gjord av {{name}}",
+    "me": "mig",
+    "markedBy": "markerad av {{name}}",
+    "by": "av {{label}}",
+    "pickDoneBy": "Markera som gjord av …",
+    "planOrDone": "Planera eller markera som gjord"
+  },
+  "summary": {
+    "title": "Summering",
+    "total": "Totalt"
+  },
+  "history": {
+    "title": "Historik",
+    "weeks4": "4 veckor",
+    "months3": "3 månader",
+    "months12": "12 månader",
+    "since": "Sedan {{date}}. Siffran efter snedstrecket är kvoten för hela perioden."
+  },
+  "household": {
+    "members": "Medlemmar",
+    "inviteHelp": "Ge den här koden till den som ska gå med:",
+    "chores": "Sysslor",
+    "choresHelp": "Kvoten är hur många gånger var och en ska göra sysslan per vecka. Lämna tomt om den görs vid behov.",
+    "choreName": "Syssla",
+    "weeklyTarget": "Gånger per vecka och person",
+    "weeklyTargetShort": "Ggr/v",
+    "addChore": "Lägg till",
+    "moveUp": "Flytta upp",
+    "moveDown": "Flytta ner",
+    "deleteChore": "Ta bort syssla",
+    "confirmDelete": "Ta bort {{name}}? Alla tidigare veckors markeringar för sysslan försvinner också."
+  },
+  "menu": {
+    "open": "Öppna menyn",
+    "account": "Mitt konto"
+  },
+  "account": {
+    "profile": "Uppgifter",
+    "currentPassword": "Nuvarande lösenord",
+    "emailNeedsPassword": "Krävs för att byta e-post, eftersom den är din inloggning.",
+    "saved": "Sparat.",
+    "changePassword": "Byt lösenord",
+    "newPassword": "Nytt lösenord",
+    "repeatPassword": "Upprepa nytt lösenord",
+    "passwordMismatch": "Lösenorden stämmer inte överens.",
+    "passwordChanged": "Lösenordet är bytt.",
+    "color": "Din färg",
+    "colorHelp": "Dina pass och prickar visas i den här färgen för alla i hushållet. Färger som någon annan har går inte att välja.",
+    "colorTaken": "{{color}}, används av {{name}}",
+    "colorAuto": "Välj automatiskt"
+  },
+  "colors": {
+    "pink": "Rosa",
+    "blue": "Blå",
+    "yellow": "Gul",
+    "purple": "Lila",
+    "green": "Grön",
+    "orange": "Orange",
+    "navy": "Marinblå",
+    "teal": "Blågrön"
+  }
+}

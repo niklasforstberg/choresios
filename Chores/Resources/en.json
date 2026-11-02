@@ -1,0 +1,111 @@
+{
+  "common": {
+    "appName": "Chores",
+    "save": "Save",
+    "serverUnavailable": "The server isn't responding right now. Try again in a moment.",
+    "retry": "Try again",
+    "cancel": "Cancel"
+  },
+  "nav": {
+    "week": "Week",
+    "history": "History",
+    "household": "Household"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "name": "First name",
+    "login": "Log in",
+    "register": "Create account",
+    "noAccount": "No account?",
+    "haveAccount": "Already have an account?",
+    "logout": "Log out",
+    "loginFailed": "Wrong email or password."
+  },
+  "noHousehold": {
+    "title": "Welcome",
+    "intro": "Create a household, or join one with the code someone in it has.",
+    "createTitle": "New household",
+    "name": "Household name",
+    "create": "Create",
+    "joinTitle": "Join",
+    "code": "Code",
+    "join": "Join"
+  },
+  "week": {
+    "title": "Week {{number}}",
+    "previous": "Previous week",
+    "next": "Next week",
+    "thisWeek": "This week",
+    "noChores": "No chores yet. Add them under Household.",
+    "planned": "planned",
+    "done": "done",
+    "add": "Plan",
+    "doneShort": "Done",
+    "myWeek": "your week {{done}}/{{target}}",
+    "remove": "Remove",
+    "markDone": "Mark as done",
+    "legend": "Tap + to plan yourself in, or to mark who did the chore today or earlier. Tap a letter once it's done.",
+    "legendDay": "Plan takes the chore on that day, Done ticks it off. The arrow marks it as done by you or someone else.",
+    "doneBy": "Done by {{name}}",
+    "me": "me",
+    "markedBy": "marked by {{name}}",
+    "by": "by {{label}}",
+    "pickDoneBy": "Mark as done by …",
+    "planOrDone": "Plan or mark as done"
+  },
+  "summary": {
+    "title": "Summary",
+    "total": "Total"
+  },
+  "history": {
+    "title": "History",
+    "weeks4": "4 weeks",
+    "months3": "3 months",
+    "months12": "12 months",
+    "since": "Since {{date}}. The number after the slash is the target for the whole period."
+  },
+  "household": {
+    "members": "Members",
+    "inviteHelp": "Give this code to whoever is joining:",
+    "chores": "Chores",
+    "choresHelp": "The target is how many times each member should do the chore per week. Leave it empty for chores done when needed.",
+    "choreName": "Chore",
+    "weeklyTarget": "Times per week per person",
+    "weeklyTargetShort": "Per wk",
+    "addChore": "Add",
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "deleteChore": "Delete chore",
+    "confirmDelete": "Delete {{name}}? Its entries from earlier weeks are deleted too."
+  },
+  "menu": {
+    "open": "Open menu",
+    "account": "My account"
+  },
+  "account": {
+    "profile": "Details",
+    "currentPassword": "Current password",
+    "emailNeedsPassword": "Needed to change your email, since it's your login.",
+    "saved": "Saved.",
+    "changePassword": "Change password",
+    "newPassword": "New password",
+    "repeatPassword": "Repeat new password",
+    "passwordMismatch": "The passwords don't match.",
+    "passwordChanged": "Your password has been changed.",
+    "color": "Your colour",
+    "colorHelp": "Your entries and dots show in this colour for everyone in the household. Colours someone else has can't be picked.",
+    "colorTaken": "{{color}}, used by {{name}}",
+    "colorAuto": "Pick automatically"
+  },
+  "colors": {
+    "pink": "Pink",
+    "blue": "Blue",
+    "yellow": "Yellow",
+    "purple": "Purple",
+    "green": "Green",
+    "orange": "Orange",
+    "navy": "Navy",
+    "teal": "Teal"
+  }
+}
