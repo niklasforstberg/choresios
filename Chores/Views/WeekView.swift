@@ -145,50 +145,56 @@ struct WeekView: View {
 
     // MARK: Week grid
 
+    private let nameWidth: CGFloat = 174
+
     private func grid(days: [Date], today: String, me: UserMe, members: [HouseholdMember],
                       labels: [Int: String], colors: [Int: MemberColor], names: [Int: String]) -> some View {
         // Today, run over with a yellow highlighter.
         let highlight = { (date: String) in date == today ? Theme.sun.opacity(0.32) : .clear }
-        return Grid(alignment: .topLeading, horizontalSpacing: 0, verticalSpacing: 0) {
-            GridRow {
-                Color.clear.gridCellUnsizedAxes([.horizontal, .vertical])
+        // Rows of equal columns rather than a Grid: a Grid sizes each column to its widest cell on one
+        // line, so chips would widen the week off the screen instead of wrapping.
+        return VStack(spacing: 0) {
+            HStack(spacing: 0) {
+                Color.clear.frame(width: nameWidth)
                 ForEach(days, id: \.self) { d in
                     let date = Week.iso(d)
                     HStack(spacing: 4) {
                         Text(Week.weekday(d))
                         Text("\(Week.calendar.component(.day, from: d))")
-                            .foregroundStyle(date == today ? Theme.ink : Theme.muted)
                     }
                     .font(.app(17, date == today ? .bold : .medium))
                     .foregroundStyle(date == today ? Theme.ink : Theme.muted)
                     .lineLimit(1)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 10)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .background(highlight(date))
                 }
             }
             ForEach(store.chores) { chore in
-                GridRow { DashedRule().gridCellColumns(days.count + 1) }
-                GridRow {
-                    HStack(spacing: 0) {
-                        Text(chore.name).font(.app(17, .semibold))
-                        if let target = chore.weeklyTarget { Muted(" ×\(target)").font(.app(17)) }
-                    }
-                    .frame(maxWidth: 150, maxHeight: .infinity, alignment: .leading)
+                DashedRule()
+                HStack(spacing: 0) {
+                    // A long name wraps; the day columns share what's left.
+                    (Text(chore.name).font(.app(17, .semibold))
+                        + Text(chore.weeklyTarget.map { " ×\($0)" } ?? "").font(.app(17)).foregroundColor(Theme.muted))
                     .padding(.leading, 16)
                     .padding(.trailing, 8)
                     .padding(.vertical, 10)
+                    .frame(width: nameWidth, alignment: .leading)
+                    .frame(maxHeight: .infinity)
                     ForEach(days, id: \.self) { d in
                         let date = Week.iso(d)
                         cell(chore: chore, date: date, today: today, me: me, members: members,
                              labels: labels, colors: colors, names: names)
                             .padding(.horizontal, 8)
                             .padding(.vertical, 10)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                            // minWidth 0: every column gets the same share, whatever its chips need.
+                            .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                             .background(highlight(date))
                     }
                 }
+                // The row is as tall as its tallest cell, and every cell fills it, so today's highlight runs unbroken.
+                .fixedSize(horizontal: false, vertical: true)
             }
         }
         .background(Theme.sheet)
@@ -200,7 +206,8 @@ struct WeekView: View {
         let onDay = { (e: any DayEntry) in e.choreId == chore.id && e.date == date }
         return FlowLayout(spacing: 5) {
             ForEach(completions.filter(onDay)) { e in
-                completionChip(e, me: me, labels: labels, colors: colors, names: names)
+                // No "by N" here: it wouldn't fit a column. VoiceOver still reads it.
+                completionChip(e, me: me, labels: labels, colors: colors, names: names, showBy: false)
             }
             ForEach(claims.filter(onDay)) { e in
                 claimChip(e, me: me, today: today, labels: labels, colors: colors, names: names)
@@ -317,13 +324,13 @@ struct WeekView: View {
     }
 
     private func completionChip(_ e: ChoreCompletion, me: UserMe, labels: [Int: String],
-                                colors: [Int: MemberColor], names: [Int: String]) -> some View {
+                                colors: [Int: MemberColor], names: [Int: String], showBy: Bool = true) -> some View {
         let byOther = e.recordedById != e.userId
         let recordedBy = e.recordedById.flatMap { names[$0] } ?? "?"
         var description = "\(names[e.userId] ?? "") – \(t("week.done"))"
         if byOther { description += ", \(t("week.markedBy", ["name": recordedBy]))" }
         return Chip(label: labels[e.userId] ?? "?", color: colors[e.userId], done: true,
-                    by: byOther ? t("week.by", ["label": e.recordedById.flatMap { labels[$0] } ?? "?"]) : nil,
+                    by: byOther && showBy ? t("week.by", ["label": e.recordedById.flatMap { labels[$0] } ?? "?"]) : nil,
                     stamp: e.id == stamped, accessibility: description,
                     onRemove: e.userId == me.id || e.recordedById == me.id
                         ? { mutate { try await API.shared.deleteCompletion(id: e.id); return nil } } : nil)

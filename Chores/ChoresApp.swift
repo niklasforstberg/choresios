@@ -87,11 +87,16 @@ private struct AppToolbar: ViewModifier {
     @Environment(Store.self) private var store
     @State private var showAccount = false
 
+    private var brand: some View { TwoInk(text: t("common.appName"), size: 25).fixedSize() }
+
     func body(content: Content) -> some View {
         content
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    TwoInk(text: t("common.appName"), size: 25).fixedSize()
+                // iOS 26 puts toolbar items on glass, which makes the brand look like a button. It isn't one.
+                if #available(iOS 26, *) {
+                    ToolbarItem(placement: .topBarLeading) { brand }.sharedBackgroundVisibility(.hidden)
+                } else {
+                    ToolbarItem(placement: .topBarLeading) { brand }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
