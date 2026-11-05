@@ -1,8 +1,10 @@
 import SwiftUI
 
-/// choresweb's Week page as it looks on a phone: one day at a time, picked from a strip of the week.
+/// choresweb's Week page: on a phone held upright one day at a time, picked from a strip of the week;
+/// turned on its side the whole week as a grid, like the web on a wide screen.
 struct WeekView: View {
     @Environment(Store.self) private var store
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
     @State private var monday = Week.monday(of: Date())
     @State private var picked = Week.today()
     @State private var claims: [ChoreClaim] = []
@@ -103,7 +105,25 @@ struct WeekView: View {
         let labels = Members.labels(members)
         let colors = Members.colors(members)
         let names = Dictionary(uniqueKeysWithValues: members.map { ($0.id, $0.name) })
+        // An iPhone on its side has a compact height.
+        let wide = verticalSizeClass == .compact
 
+        if wide {
+            grid(days: days, today: today, me: me, members: members, labels: labels, colors: colors, names: names)
+        } else {
+            dayView(days: days, day: day, today: today, me: me, members: members,
+                    labels: labels, colors: colors, names: names)
+        }
+
+        Muted(t(wide ? "week.legend" : "week.legendDay")).font(.app(15))
+
+        SectionTitle(text: t("summary.title"))
+        SummaryView(chores: store.chores, members: members, completions: completions, claims: claims, weeks: 1)
+    }
+
+    @ViewBuilder
+    private func dayView(days: [Date], day: String, today: String, me: UserMe, members: [HouseholdMember],
+                         labels: [Int: String], colors: [Int: MemberColor], names: [Int: String]) -> some View {
         HStack(spacing: 4) {
             ForEach(days, id: \.self) { d in
                 let date = Week.iso(d)
@@ -121,11 +141,85 @@ struct WeekView: View {
         }
         .padding(.horizontal, 16)
         .background(RoundedRectangle(cornerRadius: 16).fill(Theme.sheet))
+    }
 
-        Muted(t("week.legendDay")).font(.app(15))
+    // MARK: Week grid
 
-        SectionTitle(text: t("summary.title"))
-        SummaryView(chores: store.chores, members: members, completions: completions, claims: claims, weeks: 1)
+    private func grid(days: [Date], today: String, me: UserMe, members: [HouseholdMember],
+                      labels: [Int: String], colors: [Int: MemberColor], names: [Int: String]) -> some View {
+        // Today, run over with a yellow highlighter.
+        let highlight = { (date: String) in date == today ? Theme.sun.opacity(0.32) : .clear }
+        return Grid(alignment: .topLeading, horizontalSpacing: 0, verticalSpacing: 0) {
+            GridRow {
+                Color.clear.gridCellUnsizedAxes([.horizontal, .vertical])
+                ForEach(days, id: \.self) { d in
+                    let date = Week.iso(d)
+                    HStack(spacing: 4) {
+                        Text(Week.weekday(d))
+                        Text("\(Week.calendar.component(.day, from: d))")
+                            .foregroundStyle(date == today ? Theme.ink : Theme.muted)
+                    }
+                    .font(.app(17, date == today ? .bold : .medium))
+                    .foregroundStyle(date == today ? Theme.ink : Theme.muted)
+                    .lineLimit(1)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(highlight(date))
+                }
+            }
+            ForEach(store.chores) { chore in
+                GridRow { DashedRule().gridCellColumns(days.count + 1) }
+                GridRow {
+                    HStack(spacing: 0) {
+                        Text(chore.name).font(.app(17, .semibold))
+                        if let target = chore.weeklyTarget { Muted(" ×\(target)").font(.app(17)) }
+                    }
+                    .frame(maxWidth: 150, maxHeight: .infinity, alignment: .leading)
+                    .padding(.leading, 16)
+                    .padding(.trailing, 8)
+                    .padding(.vertical, 10)
+                    ForEach(days, id: \.self) { d in
+                        let date = Week.iso(d)
+                        cell(chore: chore, date: date, today: today, me: me, members: members,
+                             labels: labels, colors: colors, names: names)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 10)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                            .background(highlight(date))
+                    }
+                }
+            }
+        }
+        .background(Theme.sheet)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+
+    private func cell(chore: Chore, date: String, today: String, me: UserMe, members: [HouseholdMember],
+                      labels: [Int: String], colors: [Int: MemberColor], names: [Int: String]) -> some View {
+        let onDay = { (e: any DayEntry) in e.choreId == chore.id && e.date == date }
+        return FlowLayout(spacing: 5) {
+            ForEach(completions.filter(onDay)) { e in
+                completionChip(e, me: me, labels: labels, colors: colors, names: names)
+            }
+            ForEach(claims.filter(onDay)) { e in
+                claimChip(e, me: me, today: today, labels: labels, colors: colors, names: names)
+            }
+            if date > today {
+                Button { plan(chore.id, date) } label: { AddMark() }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(t("week.add"))
+            } else {
+                // Today can still be planned; any day up to today can be marked done, by anyone.
+                Menu {
+                    Section(t(date == today ? "week.planOrDone" : "week.pickDoneBy")) {
+                        if date == today { Button(t("week.add")) { plan(chore.id, date) } }
+                        doneByButtons(chore.id, date, me: me, members: members)
+                    }
+                } label: { AddMark() }
+                .accessibilityLabel(t(date == today ? "week.planOrDone" : "week.pickDoneBy"))
+            }
+        }
     }
 
     private func row(chore: Chore, day: String, today: String, me: UserMe, members: [HouseholdMember],
@@ -165,20 +259,13 @@ struct WeekView: View {
                         .buttonStyle(.primary)
                         .frame(minWidth: 84)
                 } else {
-                    Button(t("week.add")) { mutate { _ = try await API.shared.createClaim(choreId: chore.id, date: day); return nil } }
+                    Button(t("week.add")) { plan(chore.id, day) }
                         .buttonStyle(GhostButtonStyle(minHeight: 44))
                         .frame(minWidth: 84)
                 }
                 if day <= today {
                     Menu {
-                        Section(t("week.pickDoneBy")) {
-                            // Me first, as that's the usual pick.
-                            ForEach(members.sorted { $0.id == me.id && $1.id != me.id }) { m in
-                                Button(t("week.doneBy", ["name": m.id == me.id ? t("week.me") : m.name])) {
-                                    markDone(chore.id, day, m.id)
-                                }
-                            }
-                        }
+                        Section(t("week.pickDoneBy")) { doneByButtons(chore.id, day, me: me, members: members) }
                     } label: {
                         Image(systemName: "chevron.down")
                             .font(.system(size: 16, weight: .semibold))
@@ -191,6 +278,19 @@ struct WeekView: View {
             }
         }
         .padding(.vertical, 14)
+    }
+
+    private func plan(_ choreId: Int, _ date: String) {
+        mutate { _ = try await API.shared.createClaim(choreId: choreId, date: date); return nil }
+    }
+
+    private func doneByButtons(_ choreId: Int, _ date: String, me: UserMe, members: [HouseholdMember]) -> some View {
+        // Me first, as that's the usual pick.
+        ForEach(members.sorted { $0.id == me.id && $1.id != me.id }) { m in
+            Button(t("week.doneBy", ["name": m.id == me.id ? t("week.me") : m.name])) {
+                markDone(choreId, date, m.id)
+            }
+        }
     }
 
     // Marking a member done ticks off their claim for the day if they have one.
@@ -255,6 +355,18 @@ private struct DayTab: View {
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(selected ? .isSelected : [])
+    }
+}
+
+/// The grid's +: plan, or mark done.
+private struct AddMark: View {
+    var body: some View {
+        Image(systemName: "plus")
+            .font(.system(size: 13, weight: .semibold))
+            .foregroundStyle(Theme.muted)
+            .frame(width: 30, height: 30)
+            .overlay(Circle().strokeBorder(Theme.rule, style: StrokeStyle(lineWidth: 1.5, dash: [4, 3])))
+            .contentShape(Circle())
     }
 }
 
