@@ -188,6 +188,9 @@ struct TwoInk: View {
         .font(.app(size, .bold))
         .tracking(-size * 0.06)
         .monospacedDigit()
+        // Room for what the frame leaves out: the last letter's tracking and the blue's offset.
+        .padding(.trailing, size * 0.1)
+        .padding(.bottom, size * 0.03)
         .compositingGroup()
     }
 }
