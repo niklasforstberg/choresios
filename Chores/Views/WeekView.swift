@@ -65,24 +65,16 @@ struct WeekView: View {
     private var header: some View {
         let number = Week.number(monday)
         return VStack(alignment: .leading, spacing: 4) {
-            // The one loud thing: the week number printed in two inks, a little off register.
-            HStack(alignment: .bottom, spacing: 12) {
-                VStack(alignment: .leading, spacing: 0) {
-                    Text(t("nav.week")).font(.app(21, .semibold))
-                    TwoInk(text: "\(number)", size: 104).padding(.top, -22)
-                }
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel(t("week.title", ["number": number]))
-                .accessibilityAddTraits(.isHeader)
+            HStack(spacing: 12) {
+                PageTitle(text: t("week.title", ["number": number]))
+                    .accessibilityAddTraits(.isHeader)
                 Spacer()
                 Button { goTo(Week.addDays(monday, -7)) } label: { Image(systemName: "chevron.left") }
                     .buttonStyle(.icon)
                     .accessibilityLabel(t("week.previous"))
-                    .padding(.bottom, 14)
                 Button { goTo(Week.addDays(monday, 7)) } label: { Image(systemName: "chevron.right") }
                     .buttonStyle(.icon)
                     .accessibilityLabel(t("week.next"))
-                    .padding(.bottom, 14)
             }
             HStack {
                 Muted(Week.rangeFormatter.string(from: monday, to: Week.addDays(monday, 6))).font(.app(17, .medium))

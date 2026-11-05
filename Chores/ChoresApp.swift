@@ -91,7 +91,7 @@ private struct AppToolbar: ViewModifier {
         content
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Text(t("common.appName")).font(.app(21, .bold)).tracking(-0.6).fixedSize()
+                    TwoInk(text: t("common.appName"), size: 25).fixedSize()
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {

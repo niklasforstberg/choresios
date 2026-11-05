@@ -27,6 +27,6 @@ SwiftUI, iOS 17, no dependencies. The project uses a synchronized folder: every 
 - `Lib/Week.swift`, `Lib/Members.swift` — ports of choresweb's `src/lib/week.ts` and `members.ts` (ISO weeks; members' initials and colours). Keep them in step.
 - `Lib/L10n.swift` — `t("week.add")` looks up `Resources/sv.json`/`en.json`, copies of choresweb's locales (without `landing`, plus `common.retry` and `common.cancel`). Swedish when the phone's first language is Swedish, otherwise English.
 - `Lib/Theme.swift` — choresweb's design tokens (light and dark) and the Familjen Grotesk font (`Resources/FamiljenGrotesk.ttf`, OFL, registered at launch).
-- `Views/` — `WeekView` (choresweb's narrow day view: day strip, chore rows, chips, quota dots), `SummaryView`, `HistoryView`, `HouseholdView`, `AccountView`, `NoHouseholdView`, `AuthView` (login, register). `Components.swift` has the shared button styles, cards, fields, `FlowLayout` and `TwoInk` (the off-register pink and blue headline).
+- `Views/` — `WeekView` (choresweb's narrow day view: day strip, chore rows, chips, quota dots), `SummaryView`, `HistoryView`, `HouseholdView`, `AccountView`, `NoHouseholdView`, `AuthView` (login, register). `Components.swift` has the shared button styles, cards, fields, `FlowLayout` and `TwoInk` (the off-register pink and blue wordmark).
 
 Signing: set your team under Signing & Capabilities before running on a device. Bundle id `net.forstberg.chores`.
