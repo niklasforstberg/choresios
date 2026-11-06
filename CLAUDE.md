@@ -13,7 +13,13 @@ The iOS app for Chores (household chores — who did what, when). It looks and w
 ```bash
 open Chores.xcodeproj    # then run the Chores scheme
 xcodebuild -project Chores.xcodeproj -scheme Chores -destination 'platform=iOS Simulator,name=iPhone 17' -derivedDataPath build build
+
+# TestFlight: archive with a fresh build number, then upload to App Store Connect (uses the account signed in to Xcode)
+xcodebuild -project Chores.xcodeproj -scheme Chores -configuration Release -destination 'generic/platform=iOS' -archivePath build/Chores.xcarchive archive CURRENT_PROJECT_VERSION=$(date +%Y%m%d%H%M) -allowProvisioningUpdates
+xcodebuild -exportArchive -archivePath build/Chores.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath build/export -allowProvisioningUpdates
 ```
+
+Every upload needs a higher build number than the last, hence the timestamp; `MARKETING_VERSION` (1.0) is the version testers see. The app declares no non-exempt encryption (it only uses HTTPS), so App Store Connect doesn't ask about export compliance.
 
 The app talks to `https://chores.forstberg.net`. To use a local API instead, set the environment variable `CHORES_API_URL=http://127.0.0.1:5072` in the scheme (or `SIMCTL_CHILD_CHORES_API_URL` with `simctl launch`). Use `127.0.0.1`, not `localhost`: App Transport Security lets plain HTTP through to IP addresses only.
 
